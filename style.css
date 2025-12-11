@@ -1,0 +1,214 @@
+/* --- 1. Reset dan Gaya Body Dasar --- */
+body {
+    font-family: Arial, sans-serif; 
+    background-color: #f8f9fa; 
+    color: #343a40;
+    line-height: 1.4;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 30px 20px;
+    margin: 0;
+}
+
+/* --- 2. Gaya Kontainer Form Utama --- */
+form {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 800px; 
+}
+
+/* --- 3. Gaya Header Utama dan Section Title --- */
+.form-header {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+h1 {
+    color: #007bff; 
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.section-title {
+    color: #495057;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 5px;
+}
+
+/* --- 4. Gaya Input dan Label Identitas --- */
+label {
+    display: block; 
+    margin-bottom: 5px; 
+    margin-top: 15px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+input[type="text"],
+input[type="date"],
+select,
+textarea {
+    width: 100%; 
+    padding: 8px;
+    border: 1px solid #ced4da; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    font-size: 14px;
+}
+
+/* --- 5. Gaya Tabel Radio Button (Riwayat Penyakit) --- */
+
+/* Header untuk kolom 'Ada/Tidak Ada' */
+.radio-header {
+    display: grid;
+    grid-template-columns: 1fr 60px 60px; /* Label | Ada | Tidak Ada */
+    font-weight: bold;
+    border-bottom: 2px solid #000;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+.radio-header .header-option {
+    text-align: center;
+}
+
+/* Setiap Baris Riwayat Penyakit */
+.input-group-radio {
+    display: grid;
+    grid-template-columns: 1fr 60px 60px; /* Label | Radio Ada | Radio Tidak Ada */
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+.input-group-radio .item-label {
+    margin: 0;
+    padding-right: 10px;
+    font-weight: normal;
+}
+
+.radio-options {
+    display: contents; 
+}
+
+.radio-options input[type="radio"] {
+    display: block;
+    margin: 0 auto; 
+    padding: 0;
+    width: auto;
+}
+
+/* Sembunyikan label yang tidak diperlukan untuk tata letak grid */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* --- 6. Gaya Kebiasaan (Mirip Tabel Horizontal) --- */
+/* Header Khusus untuk Kebiasaan */
+.kebiasaan-header {
+    display: grid;
+    /* HARUS SAMA DENGAN input-group-kebiasaan: 1fr | 50px | 50px | 200px */
+    grid-template-columns: 1fr 50px 50px 200px; 
+    font-weight: bold;
+    border-bottom: 2px solid #000;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+.kebiasaan-header .header-kebiasaan-option {
+    text-align: center;
+}
+.kebiasaan-header .header-kebiasaan-input {
+    text-align: left; /* Teks "Bila Ya" harus rata kiri */
+    padding-left: 10px;
+}
+
+.input-group-kebiasaan {
+    display: grid;
+    grid-template-columns: 1fr 50px 50px 200px; /* Label | Tidak | Ya | Input Teks */
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.input-group-kebiasaan .item-label {
+    margin: 0;
+    font-weight: normal;
+}
+.input-group-kebiasaan input[type="radio"] {
+    display: block;
+    margin: 0 auto;
+    width: auto;
+}
+.input-group-kebiasaan input[type="text"] {
+    width: 95%;
+}
+
+/* --- 7. Gaya Persetujuan Karyawan --- */
+.pernyataan-container {
+    margin-top: 30px;
+    padding: 15px;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    background-color: #e9f5ff;
+}
+.pernyataan-container p {
+    font-size: 12px;
+    color: #495057;
+    margin-bottom: 10px;
+}
+.pernyataan-label {
+    display: inline;
+    font-weight: normal;
+}
+
+
+/* --- 8. Gaya Tombol Submit & Status --- */
+button[type="submit"] {
+    background-color: #28a745; 
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px; 
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 30px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    width: 100%; 
+}
+
+button[type="submit"]:hover {
+    background-color: #218838; 
+}
+
+#pesanStatus {
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 14px;
+}
+#pesanStatus[style*="green"] {
+    background-color: #d4edda;
+    color: #155724;
+}

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Anamnesa MCU Karyawan</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <div id="form-container">
+        <form id="anamnesaForm">
+            
+            <div class="form-header">
+                <h1>Lembar Anamnesa MCU</h1>
+            </div>
+            
+            <h2 class="section-title">WAJIB DI ISI KARYAWAN SEBELUM MEDICAL CHEK UP</h2>
+            <label>Nama Peserta:</label>
+            <input type="text" name="nama_peserta" required>
+
+            <label>Tanggal Lahir:</label>
+            <input type="date" name="tanggal_lahir" required>
+            
+            <label>Jenis Kelamin:</label>
+            <select name="jenis_kelamin" required>
+                <option value="">Pilih</option>
+                <option value="Perempuan">Perempuan</option>
+                <option value="Laki-laki">Laki-laki</option>
+            </select>
+            
+            <label>No Handphone:</label>
+            <input type="text" name="no_handphone" required>
+            
+            <label>Unit Kerja:</label>
+            <input type="text" name="departemen" required>
+            
+            <label style="margin-top: 25px;">Keluhan sekarang:</label>
+            <div style="display: flex; gap: 20px; margin-bottom: 10px;">
+                <input type="radio" id="keluhan_tidak" name="keluhan_pilih" value="Tidak ada" required>
+                <label for="keluhan_tidak" style="margin-top: 0; display: inline;">Tidak ada</label>
+                <input type="radio" id="keluhan_ada" name="keluhan_pilih" value="Ada" required>
+                <label for="keluhan_ada" style="margin-top: 0; display: inline;">Ada</label>
+            </div>
+            
+            <div id="keluhan_sebutkan_container" style="display:none; margin-top: 5px;">
+                <label>Sebutkan keluhan Anda:</label>
+                <input type="text" name="keluhan_sebutkan" id="keluhan_sebutkan_input">
+            </div>
+
+            <h2 class="section-title">RIWAYAT PENYAKIT SENDIRI</h2>
+            <div class="radio-header">
+                <span class="header-label">Riwayat Penyakit</span>
+                <span class="header-option">Ada</span>
+                <span class="header-option">Tidak</span>
+            </div>
+
+            <div class="input-group-radio">
+                <label class="item-label">A. Riwayat Hepatitis</label>
+                <div class="radio-options">
+                    <input type="radio" id="riw_hep_ada" name="riw_hepatitis" value="Ada" required>
+                    <label for="riw_hep_ada" class="visually-hidden">Ada</label>
+                    <input type="radio" id="riw_hep_tidak" name="riw_hepatitis" value="Tidak Ada" required>
+                    <label for="riw_hep_tidak" class="visually-hidden">Tidak Ada</label>
+                </div>
+            </div>
+
+            <div class="input-group-radio">
+                <label class="item-label">B. Riwayat Pengobatan TBC</label>
+                <div class="radio-options">
+                    <input type="radio" id="riw_tbc_ada" name="riw_tbc" value="Ada" required>
+                    <label for="riw_tbc_ada" class="visually-hidden">Ada</label>
+                    <input type="radio" id="riw_tbc_tidak" name="riw_tbc" value="Tidak Ada" required>
+                    <label for="riw_tbc_tidak" class="visually-hidden">Tidak Ada</label>
+                </div>
+            </div>
+
+            <div class="input-group-radio">
+                <label class="item-label">C. Hipertensi</label>
+                <div class="radio-options">
+                    <input type="radio" id="riw_hip_ada" name="riw_hipertensi" value="Ada" required>
+                    <label for="riw_hip_ada" class="visually-hidden">Ada</label>
+                    <input type="radio" id="riw_hip_tidak" name="riw_hipertensi" value="Tidak Ada" required>
+                    <label for="riw_hip_tidak" class="visually-hidden">Tidak Ada</label>
+                </div>
+            </div>
+
+            <div class="input-group-radio">
+                <label class="item-label">D. Kencing manis (DM)</label>
+                <div class="radio-options">
+                    <input type="radio" id="riw_dm_ada" name="riw_dm" value="Ada" required>
+                    <label for="riw_dm_ada" class="visually-hidden">Ada</label>
+                    <input type="radio" id="riw_dm_tidak" name="riw_dm" value="Tidak Ada" required>
+                    <label for="riw_dm_tidak" class="visually-hidden">Tidak Ada</label>
+                </div>
+            </div>
+
+            <div class="input-group-radio">
+                <label class="item-label">E. Batuk menahun (> 3 bulan)</label>
+                <div class="radio-options">
+                    <input type="radio" id="riw_batuk_ada" name="riw_batuk_menahun" value="Ada" required>
+                    <label for="riw_batuk_ada" class="visually-hidden">Ada</label>
+                    <input type="radio" id="riw_batuk_tidak" name="riw_batuk_menahun" value="Tidak Ada" required>
+                    <label for="riw_batuk_tidak" class="visually-hidden">Tidak Ada</label>
+                </div>
+            </div>
+            
+            <div class="input-group-radio">
+                <label class="item-label">F. Riwayat Operasi</label>
+                <div class="radio-options">
+                    <input type="radio" id="riw_operasi_ada" name="riw_operasi" value="Ada" required>
+                    <label for="riw_operasi_ada" class="visually-hidden">Ada</label>
+                    <input type="radio" id="riw_operasi_tidak" name="riw_operasi" value="Tidak Ada" required>
+                    <label for="riw_operasi_tidak" class="visually-hidden">Tidak Ada</label>
+                </div>
+            </div>
+
+            <div class="input-group-radio">
+                <label class="item-label">G. Riwayat Rawat Inap</label>
+                <div class="radio-options">
+                    <input type="radio" id="riw_rawat_ada" name="riw_rawat_inap" value="Ada" required>
+                    <label for="riw_rawat_ada" class="visually-hidden">Ada</label>
+                    <input type="radio" id="riw_rawat_tidak" name="riw_rawat_inap" value="Tidak Ada" required>
+                    <label for="riw_rawat_tidak" class="visually-hidden">Tidak Ada</label>
+                </div>
+            </div>
+
+            <div class="input-group-radio">
+                <label class="item-label">H. Alergi Obat/makanan</label>
+                <div class="radio-options">
+                    <input type="radio" id="riw_alergi_ada" name="riw_alergi_obat_makanan" value="Ada" required>
+                    <label for="riw_alergi_ada" class="visually-hidden">Ada</label>
+                    <input type="radio" id="riw_alergi_tidak" name="riw_alergi_obat_makanan" value="Tidak Ada" required>
+                    <label for="riw_alergi_tidak" class="visually-hidden">Tidak Ada</label>
+                </div>
+            </div>
+            
+            <div id="riw_alergi_sebutkan_container" style="display:none; margin-top: 5px;">
+                <label>Sebutkan Alergi Anda:</label>
+                <input type="text" name="riw_alergi_sebutkan" id="riw_alergi_sebutkan_input">
+            </div>
+            <div class="input-group-radio">
+                <label class="item-label">I. Lain-lain, sebutkan</label>
+                <div class="radio-options">
+                    <input type="radio" id="riw_lain_ada" name="riw_lain_pilih" value="Ada" required>
+                    <label for="riw_lain_ada" class="visually-hidden">Ada</label>
+                    <input type="radio" id="riw_lain_tidak" name="riw_lain_pilih" value="Tidak Ada" required>
+                    <label for="riw_lain_tidak" class="visually-hidden">Tidak Ada</label>
+                </div>
+            </div>
+
+            <div id="riw_lain_sebutkan_container" style="display:none; margin-top: 5px;">
+                <label>Sebutkan Riwayat Penyakit Lainnya:</label>
+                <input type="text" name="riw_lain_sebutkan" id="riw_lain_sebutkan_input">
+            </div>
+            <h2 class="section-title">RIWAYAT PENYAKIT KELUARGA</h2>
+            <div class="radio-header">
+                <span class="header-label">Riwayat Penyakit</span>
+                <span class="header-option">Ya</span>
+                <span class="header-option">Tidak</span>
+            </div>
+
+            <div class="input-group-radio">
+                <label class="item-label">A. Penyakit Jantung</label>
+                <div class="radio-options">
+                    <input type="radio" id="kel_jan_ya" name="kel_jantung" value="Ya" required>
+                    <label for="kel_jan_ya" class="visually-hidden">Ya</label>
+                    <input type="radio" id="kel_jan_tidak" name="kel_jantung" value="Tidak" required>
+                    <label for="kel_jan_tidak" class="visually-hidden">Tidak</label>
+                </div>
+            </div>
+
+            <div class="input-group-radio">
+                <label class="item-label">B. Penyakit Darah Tinggi (Hipertensi)</label>
+                <div class="radio-options">
+                    <input type="radio" id="kel_hip_ya" name="kel_hipertensi" value="Ya" required>
+                    <label for="kel_hip_ya" class="visually-hidden">Ya</label>
+                    <input type="radio" id="kel_hip_tidak" name="kel_hipertensi" value="Tidak" required>
+                    <label for="kel_hip_tidak" class="visually-hidden">Tidak</label>
+                </div>
+            </div>
+
+            <div class="input-group-radio">
+                <label class="item-label">C. Kencing Manis (Diabetes)</label>
+                <div class="radio-options">
+                    <input type="radio" id="kel_dm_ya" name="kel_dm" value="Ya" required>
+                    <label for="kel_dm_ya" class="visually-hidden">Ya</label>
+                    <input type="radio" id="kel_dm_tidak" name="kel_dm" value="Tidak" required>
+                    <label for="kel_dm_tidak" class="visually-hidden">Tidak</label>
+                </div>
+            </div>
+
+            <div class="input-group-radio">
+                <label class="item-label">D. Penyakit Stroke</label>
+                <div class="radio-options">
+                    <input type="radio" id="kel_stroke_ya" name="kel_stroke" value="Ya" required>
+                    <label for="kel_stroke_ya" class="visually-hidden">Ya</label>
+                    <input type="radio" id="kel_stroke_tidak" name="kel_stroke" value="Tidak" required>
+                    <label for="kel_stroke_tidak" class="visually-hidden">Tidak</label>
+                </div>
+            </div>
+
+            <div class="input-group-radio">
+                <label class="item-label">E. Penyakit Paru/Asma/TB</label>
+                <div class="radio-options">
+                    <input type="radio" id="kel_paru_ya" name="kel_paru_asma_tb" value="Ya" required>
+                    <label for="kel_paru_ya" class="visually-hidden">Ya</label>
+                    <input type="radio" id="kel_paru_tidak" name="kel_paru_asma_tb" value="Tidak" required>
+                    <label for="kel_paru_tidak" class="visually-hidden">Tidak</label>
+                </div>
+            </div>
+
+            <div class="input-group-radio">
+                <label class="item-label">F. Penyakit Kanker/tumor</label>
+                <div class="radio-options">
+                    <input type="radio" id="kel_kanker_ya" name="kel_kanker_tumor" value="Ya" required>
+                    <label for="kel_kanker_ya" class="visually-hidden">Ya</label>
+                    <input type="radio" id="kel_kanker_tidak" name="kel_kanker_tumor" value="Tidak" required>
+                    <label for="kel_kanker_tidak" class="visually-hidden">Tidak</label>
+                </div>
+            </div>
+
+            <div class="input-group-radio">
+                <label class="item-label">G. Penyakit Gangguan Jiwa</label>
+                <div class="radio-options">
+                    <input type="radio" id="kel_jiwa_ya" name="kel_gangguan_jiwa" value="Ya" required>
+                    <label for="kel_jiwa_ya" class="visually-hidden">Ya</label>
+                    <input type="radio" id="kel_jiwa_tidak" name="kel_gangguan_jiwa" value="Tidak" required>
+                    <label for="kel_jiwa_tidak" class="visually-hidden">Tidak</label>
+                </div>
+            </div>
+
+            <div class="input-group-radio">
+                <label class="item-label">H. Penyakit Ginjal</label>
+                <div class="radio-options">
+                    <input type="radio" id="kel_ginjal_ya" name="kel_ginjal" value="Ya" required>
+                    <label for="kel_ginjal_ya" class="visually-hidden">Ya</label>
+                    <input type="radio" id="kel_ginjal_tidak" name="kel_ginjal" value="Tidak" required>
+                    <label for="kel_ginjal_tidak" class="visually-hidden">Tidak</label>
+                </div>
+            </div>
+
+            <div class="input-group-radio">
+                <label class="item-label">I. Penyakit Saluran Cerna</label>
+                <div class="radio-options">
+                    <input type="radio" id="kel_cerna_ya" name="kel_saluran_cerna" value="Ya" required>
+                    <label for="kel_cerna_ya" class="visually-hidden">Ya</label>
+                    <input type="radio" id="kel_cerna_tidak" name="kel_saluran_cerna" value="Tidak" required>
+                    <label for="kel_cerna_tidak" class="visually-hidden">Tidak</label>
+                </div>
+            </div>
+
+            <div class="input-group-radio">
+                <label class="item-label">J. Penyakit Lainnya</label>
+                <div class="radio-options">
+                    <input type="radio" id="kel_lainnya_ya" name="kel_lainnya_pilih" value="Ya" required> 
+                    <label for="kel_lainnya_ya" class="visually-hidden">Ya</label>
+                    <input type="radio" id="kel_lainnya_tidak" name="kel_lainnya_pilih" value="Tidak" required>
+                    <label for="kel_lainnya_tidak" class="visually-hidden">Tidak</label>
+                </div>
+            </div>
+
+            <div id="sebutkan_lainnya_container" style="display:none; margin-top: 15px;">
+                <label>Sebutkan penyakit keluarga lainnya:</label>
+                <input type="text" name="kel_lainnya_sebutkan" id="kel_lainnya_sebutkan_input">
+            </div>
+            
+            <h2 class="section-title">KEBIASAAN</h2>
+            
+            <div class="kebiasaan-header">
+                <span class="header-label"></span>
+                <span class="header-kebiasaan-option">Tidak</span>
+                <span class="header-kebiasaan-option">Ya</span>
+                <span class="header-kebiasaan-input">Bila Ya</span>
+            </div>
+            
+            <div class="input-group-kebiasaan">
+                <label class="item-label">Minum Alkohol</label>
+                <input type="radio" id="alk_tidak" name="keb_alkohol" value="Tidak" required>
+                <label for="alk_tidak" class="visually-hidden">Tidak</label>
+                <input type="radio" id="alk_ya" name="keb_alkohol" value="Ya" required>
+                <label for="alk_ya" class="visually-hidden">Ya</label>
+                <input type="text" name="jumlah_alkohol" placeholder="(bila ya),.. botol/hari">
+            </div>
+            
+            <div class="input-group-kebiasaan">
+                <label class="item-label">Merokok</label>
+                <input type="radio" id="rokok_tidak" name="keb_merokok" value="Tidak" required>
+                <label for="rokok_tidak" class="visually-hidden">Tidak</label>
+                <input type="radio" id="rokok_ya" name="keb_merokok" value="Ya" required>
+                <label for="rokok_ya" class="visually-hidden">Ya</label>
+                <input type="text" name="jumlah_rokok" placeholder="(bila ya),.. batang/hari">
+            </div>
+            
+            <div class="input-group-kebiasaan">
+                <label class="item-label">Olahraga</label>
+                <input type="radio" id="ol_tidak" name="keb_olahraga" value="Tidak" required>
+                <label for="ol_tidak" class="visually-hidden">Tidak</label>
+                <input type="radio" id="ol_ya" name="keb_olahraga" value="Ya" required>
+                <label for="ol_ya" class="visually-hidden">Ya</label>
+                <input type="text" name="frekuensi_olahraga" placeholder="(bila ya),.. kali/minggu">
+            </div>
+    
+            <div class="pernyataan-container">
+                <p>Saya menyatakan bahwa pernyataan-pernyataan yang saya sampaikan diatas adalah benar dan dapat dipercaya. Saya memberi persetujuan kewenangan kepada Klinik Galaxy Medical Center Jatiasih Bekasi
+ untuk memberikan hasil analisa dan evaluasi hasil pemeriksaan kesehatan kepada management perusahaan untuk dilakukan tindak lanjut sesuai dengan kondisi fisik dan kesehatan saya.</p>
+                <input type="checkbox" id="persetujuan" name="pernyataan_karyawan" value="Setuju" required>
+                <label for="persetujuan" class="pernyataan-label">Saya menyetujui pernyataan di atas.</label>
+            </div>
+
+            <button type="submit">Simpan Data</button>
+            <p id="pesanStatus"></p>
+        </form>
+    </div>
+    <div id="thank-you-page" style="display: none; text-align: center; max-width: 600px; margin: 40px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        <h1 style="font-size: 32px; color: #343a40;">Terima Kasih</h1>
+        <h2 id="participant-name-display" style="font-size: 40px; color: #007bff; margin-top: 10px; margin-bottom: 30px; text-transform: uppercase;"></h2>
+        
+        <p style="font-size: 18px; margin-bottom: 40px; font-weight: 700;">Badan Pengawas Pemilihan Umum RI</p>
+
+        <p style="font-size: 18px; margin-bottom: 40px;">Sudah mengisikan Form Anamnesa</p>
+        
+        <div id="qrcode-display" style="margin: 30px auto; width: 200px; height: 200px; display: flex; justify-content: center; align-items: center;">
+            </div>
+        
+        <p style="font-size: 14px; color: #6c757d; margin-top: 50px; border-top: 1px dashed #ced4da; padding-top: 20px;">
+            Silahkan simpan dan tunjukkan QR Barcode ini kepada petugas pendaftaran pada saat pelaksanaan MCU nanti.
+        </p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script> 
+    <script src="app.js"></script> 
+</body>
+
+</html>
