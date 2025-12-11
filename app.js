@@ -1,7 +1,7 @@
 // ====================================================================
 // URL APPS SCRIPT
 // ====================================================================
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx3lkpIIf0jFcLGZxPonjbMDOuH5NC4fImA3MuXYfiE0F5qFG7RGCXEXBiR6qtjegxo2g/exec'; 
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwTpVK4HIVuIO6rx0DDo-i8u5Y4U0eKO-rWO0Vh1m8Yquy7V8dH-wYJkEdzQOtN67A3/exec'; 
 
 const form = document.getElementById('anamnesaForm');
 const pesanStatus = document.getElementById('pesanStatus');
@@ -271,4 +271,5 @@ if (form) {
         });
     });
 }
+
 
