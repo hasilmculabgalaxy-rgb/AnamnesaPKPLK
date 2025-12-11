@@ -218,6 +218,7 @@ if (form) {
                 
                 // --- AMBIL SEMUA DATA WAJIB UNTUK QR CODE ---
                 const namaPeserta = document.querySelector('input[name="nama_peserta"]').value || 'NAMA TIDAK ADA';
+                const nipNikPeserta = document.querySelector('input[name="nip_nik"]').value || 'NIP/NIK TIDAK ADA';
                 const tglLahir = document.querySelector('input[name="tanggal_lahir"]').value || 'TGL LAHIR TIDAK ADA';
                 const jenisKelamin = document.querySelector('select[name="jenis_kelamin"]').value || 'JK TIDAK ADA';
                 const noHP = document.querySelector('input[name="no_handphone"]').value || 'HP TIDAK ADA';
@@ -227,6 +228,7 @@ if (form) {
                 // Konten ini akan terbaca saat QR discan
                 const dataQR = 
                     `NAMA: ${namaPeserta.toUpperCase().trim()} | ` +
+                    `NIP/NIK: ${nipNikPeserta.trim()} | ` +
                     `TGL LAHIR: ${tglLahir} | ` +
                     `JK: ${jenisKelamin} | ` +
                     `HP: ${noHP} | ` +
@@ -269,3 +271,4 @@ if (form) {
         });
     });
 }
+
